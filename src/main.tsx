@@ -14,9 +14,9 @@ createRoot(document.getElementById("root")!).render(
       </div>
       <div className="main-screen">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/documentation" element={<Documentation />} />
-          <Route path="/designer" element={<Designer />} />
+          <Route path="/gcode/" element={<Home />} />
+          <Route path="/gcode/documentation" element={<Documentation />} />
+          <Route path="/gcode/designer" element={<Designer />} />
         </Routes>
       </div>
     </BrowserRouter>
