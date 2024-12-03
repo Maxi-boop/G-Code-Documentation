@@ -9,7 +9,7 @@ function Documentation() {
     document.title = "G-Code | Home";
   }, []);
   return (
-    <NavLink to="/documentation" end>
+    <NavLink to="/gcode/documentation" end>
       <Button
         text="Documentation"
         href=""
@@ -22,7 +22,7 @@ function Documentation() {
 }
 function Designer() {
   return (
-    <NavLink to="/designer" end>
+    <NavLink to="/gcode/designer" end>
       <Button
         text="Designer"
         href=""
