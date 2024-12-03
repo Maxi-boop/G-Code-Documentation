@@ -1,16 +1,16 @@
 {
   "name": "trinket-designer-bridgeport-mill",
+  "homepage": "https://maxi-boop.github.io/gcode/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://maxi-boop.github.io/GCodeDocumentation.github.io/",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predepoly": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "gh-pages": "^6.2.0",
