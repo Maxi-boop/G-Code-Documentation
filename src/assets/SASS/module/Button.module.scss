@@ -1,0 +1,34 @@
+#button {
+  border-radius: 0.5rem;
+  padding: 1rem 2rem 1rem 2rem;
+  background-color: var(--hslvalue);
+  font-size: large;
+  transition: ease-in-out;
+  transition-duration: 0.25s;
+
+  color: var(--color);
+}
+#button:hover {
+  text-decoration: underline white;
+  display: flex;
+  gap: 1rem;
+  border: 1px white solid;
+  color: white;
+  background-color: black;
+  box-shadow: inset 0 0 15px rgba(135, 135, 135, 0.1),
+    0 0 18px 3px rgba(0, 0, 0, 0.3);
+
+    cursor: pointer;
+}
+#button::after {
+  transform: translateX(-100%);
+}
+#button:hover::after {
+  content: url("./../../SVG/arrow-right.svg");
+  animation: arrowMovement forwards 0.25s;
+}
+@keyframes arrowMovement {
+  to {
+    transform: translateX(0%);
+  }
+}

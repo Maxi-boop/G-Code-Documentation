@@ -1,0 +1,9 @@
+$font-sizes: (
+  "xl": clamp(3rem, 2.8901rem + 1.7582vw, 5rem),
+  "l": clamp(2rem, 1.8901rem + 1.7582vw, 4rem),
+  "m": clamp(1rem, 0.8901rem + 1.7582vw, 3rem),
+  "s": clamp(0.5rem, 0.4176rem + 1.3187vw, 2rem),
+  "xs": clamp(0.5rem, 0.4725rem + 0.4396vw, 1rem),
+);
+$glass-shadow: inset 0 0 15px rgba(135, 135, 135, 0.1),
+0 0 18px 3px rgba(0, 0, 0, 0.3);

@@ -1,0 +1,58 @@
+@use "./../Functions/@variables.scss" as *;
+@use "./../Functions/@mixins.scss" as *;
+.navegation {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5rem;
+  padding: 1rem 2rem 1rem 2rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.navegationBarArea > a {
+  color: white;
+  text-decoration: none;
+}
+
+//------------------------------
+.navegationBarHoverOver > a {
+  transition: ease-in-out;
+  transition-duration: 200ms;
+  text-shadow: 0px 0px 1px #c4c4c4;
+  letter-spacing: 0.01ch;
+  margin-right: 0.25rem;
+}
+.navegationBarNotHoverOver > a {
+  transition: ease-in-out;
+  transition-duration: 200ms;
+  letter-spacing: 0ch;
+  margin-left: 0rem;
+}
+.navegationBarHomeSvgShow::after {
+  content: url("./../../SVG/house-door-fill.svg");
+  //filter: invert(100%) sepia(0%) saturate(7480%) hue-rotate(252deg)
+  //  brightness(105%) contrast(107%);
+}
+.navegationBarDocumentationSvgShow::after {
+  content: url("./../../SVG/book-half.svg");
+  //filter: invert(100%) sepia(0%) saturate(7480%) hue-rotate(252deg)
+  //  brightness(105%) contrast(107%);
+}
+.navegationBarDesignerSvgShow::after {
+  content: url("./../../SVG/magic.svg");
+  //filter: invert(100%) sepia(0%) saturate(7480%) hue-rotate(252deg)
+  //  brightness(105%) contrast(107%);
+}
+.divider{
+  content: url(./../../SVG/dot.svg);
+}
+.mobileNavegation{
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}

@@ -1,0 +1,60 @@
+@use './../Functions/@mixins.scss' as *;
+.navegationBarArea > a {
+  color: white;
+  text-decoration: none;
+}
+.navegationBarHoverOver > a {
+  transition: ease-in-out;
+  transition-duration: 200ms;
+  text-shadow: 0px 0px 1px #c4c4c4;
+  letter-spacing: 0.01ch;
+  margin-right: 0.25rem;
+}
+.navegationBarNotHoverOver > a {
+  transition: ease-in-out;
+  transition-duration: 200ms;
+  letter-spacing: 0ch;
+  //margin-right: 0.25rem;
+}
+.navegationBarSvgShow::after {
+  content: var(--svg);
+  display: inline-block; /* Adjust as needed */
+}
+
+
+.container{
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+.navegationBarArea{
+  margin-left: 16px; //CHEAP FIX TO SVG PROBLEM, SVGS ARE 16PX THATS WHY I CHOSE THIS NUMBER
+  overflow: hidden;
+}
+.svgShow{
+  fill: #c59844;
+  opacity: 0;
+  position: static;
+  transform: translateY(-100%);
+  animation: riseUp forwards cubic-bezier(0.23, 1, 0.320, 1) 0.5s;
+
+}
+.svgHidden{
+  fill: #c59844;
+  opacity: 1;
+  position: static;
+  transform: translateY(0%);
+  animation: fallDown forwards 0.5s;
+}
+@keyframes riseUp{
+  to{
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes fallDown{
+  to{
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}

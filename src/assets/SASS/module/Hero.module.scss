@@ -1,0 +1,75 @@
+@use "./../Functions/@mixins.scss" as *;
+@use "./../Functions/@variables.scss" as *;
+@use "sass:map";
+
+.heroContainer {
+  background-image: var(--background-image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  @include fillScreen();
+  @include grid(12, 12);
+}
+.overlay {
+  @include gridColumnRow(1, 11, 1, 12);
+  background-image: linear-gradient(
+    0.25turn,
+    hsl(0, 0%, 0%, 0.75),
+    hsla(0, 0%, 0%, 0)
+  );
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.text {
+  @include fillArea();
+  @include flex("m", "t");
+  flex-direction: column;
+  gap: 2rem;
+
+  margin-left: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  & > .header > h1 {
+    font-weight: 900;
+    font-size: map.get($font-sizes, "xl");
+    line-height: calc(2.8901rem + 1.7582vw);
+  }
+  & > .paragraph > p {
+    font-weight: 200;
+
+    @include for-size("xs") {
+      font-size: map.get($font-sizes, "m");
+    }
+    @include for-size("m") {
+      font-size: map.get($font-sizes, "s");
+    }
+  }
+}
+.header {
+  overflow-y: hidden;
+  & > h1 {
+    transform: translateY(-100%);
+    animation: forwards topTextTransition 2s;
+  }
+}
+.paragraph {
+  overflow-y: hidden;
+  & > p {
+    transform: translateY(100%);
+    animation-delay: 3s;
+    animation: cubic-bezier(1, 0, 0, 1) forwards topTextTransition 2s;
+  }
+}
+@keyframes topTextTransition {
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.other {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  transform: translateY(-100%);
+  animation: cubic-bezier(1, 0, 0, 1) forwards topTextTransition 2s;
+}
